@@ -1,10 +1,17 @@
+import { WildlifePage } from './../pages/wildlife/wildlife';
+import { EntertainmentPage } from './../pages/entertainment/entertainment';
+import { GeneralPage } from './../pages/general/general';
+import { HealthPage } from './../pages/health/health';
+import { TechnologyPage } from './../pages/technology/technology';
+import { SciencePage } from './../pages/science/science';
+import { SportsPage } from './../pages/sports/sports';
+import { BusinessPage } from './../pages/business/business';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { ListPage } from '../pages/list/list'; 
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +29,14 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Business', component: BusinessPage },
+      { title: 'Entertainment', component: EntertainmentPage },
+      { title: 'General', component: GeneralPage },
+      { title: 'Health', component: HealthPage },
+      { title: 'Sports', component: SportsPage },
+      { title: 'Science', component: SciencePage },
+      { title: 'Technology', component: TechnologyPage },
+      { title: 'Wildlife', component: WildlifePage }
     ];
 
   }

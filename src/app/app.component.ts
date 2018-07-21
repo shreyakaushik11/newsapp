@@ -13,6 +13,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 // import { ListPage } from '../pages/list/list'; 
 
+import { ListPage } from '../pages/list/list'; 
+import { InterestsPage } from '../pages/interests/interests';
 @Component({
   templateUrl: 'app.html'
 })
@@ -36,7 +38,8 @@ export class MyApp {
       { title: 'Sports', component: SportsPage },
       { title: 'Science', component: SciencePage },
       { title: 'Technology', component: TechnologyPage },
-      { title: 'Wildlife', component: WildlifePage }
+      { title: 'Wildlife', component: WildlifePage },
+      { title: 'Interests', component: InterestsPage }
     ];
 
   }

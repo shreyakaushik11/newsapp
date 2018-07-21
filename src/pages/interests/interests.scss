@@ -1,0 +1,100 @@
+.size {
+    width: calc(9px + 95.5%);
+    height: 12em;
+    
+}
+.grid {
+    padding:-10px;
+    margin-left: -7px;
+    
+    width: 100%;
+    margin-top: 130px
+}
+
+img{
+    width:100%;
+    height:100%;
+  }
+  [col-6] {
+    padding: 2px;
+}
+.text{
+    position: absolute;
+    text-justify: 60%;
+    z-index: 8
+    
+} 
+
+.Wildlife :not(img){
+    position: absolute;;
+    color:white;
+    text-align:center;
+    width: 100%;
+    top: 13%;
+    text-decoration:underline;
+}
+.Wildlife:focus{
+    outline:none;
+}
+.Entertainment :not(img){
+    position: absolute;;
+    color:white;
+    text-align:center;
+    width: 100%;
+    top: 37%;
+text-decoration:underline;
+}
+.Science :not(img){
+    position: absolute;;
+    color:white;
+    text-align:center;
+    width: 100%;
+    top: 60%;
+    text-decoration:underline;
+
+}
+.Health :not(img){
+    position: absolute;;
+    color:white;
+    text-align:center;
+    width: 100%;
+    top: 85%;
+    text-decoration:underline;
+
+}
+.Sports :not(img){
+    position: absolute;;
+    color:white;
+    text-align:center;
+    width: 100%;
+    top: 13%;
+    text-decoration:underline;
+
+}
+.Business :not(img){
+    position: absolute;;
+    color:rgb(255, 249, 249);
+    text-align:center;
+    width: 100%;
+    top: 37%;
+    text-decoration:underline;
+
+}
+.General :not(img){
+    position: absolute;;
+    color:white;
+    text-align:center;
+    width: 100%;
+    top: 60%;
+    text-decoration:underline;
+
+}
+.Technology :not(img){
+    position: absolute;;
+    color:white;
+    text-align:center;
+    width: 100%;
+    top: 85%;
+    text-decoration:underline;
+
+}

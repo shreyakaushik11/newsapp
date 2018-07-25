@@ -13,6 +13,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list'; 
 import { InterestsPage } from '../pages/interests/interests';
+import {SuperTabs} from 'ionic2-super-tabs';
+import {ForYouPage} from '../pages/for-you/for-you';
+import {TrendingPage} from '../pages/trending/trending';
 @Component({
   templateUrl: 'app.html'
 })

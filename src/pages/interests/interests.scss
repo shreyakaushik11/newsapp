@@ -26,15 +26,12 @@ img{
 } 
 
 .Wildlife :not(img){
-    position: absolute;;
+    position: absolute;
     color:white;
     text-align:center;
     width: 100%;
     top: 13%;
     text-decoration:underline;
-}
-.Wildlife:focus{
-    outline:none;
 }
 .Entertainment :not(img){
     position: absolute;;
@@ -98,3 +95,4 @@ text-decoration:underline;
     text-decoration:underline;
 
 }
+

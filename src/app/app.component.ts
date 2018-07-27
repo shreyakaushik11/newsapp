@@ -18,13 +18,14 @@ import { InterestsPage } from '../pages/interests/interests';
 import {SuperTabs} from 'ionic2-super-tabs';
 import {ForYouPage} from '../pages/for-you/for-you';
 import {TrendingPage} from '../pages/trending/trending';
+import {AboutPage} from '../pages/about/about';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = AboutPage ;
 
   pages: Array<{title: string, component: any}>;
 

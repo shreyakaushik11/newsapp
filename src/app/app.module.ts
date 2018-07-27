@@ -13,7 +13,7 @@ import {SuperTabsModule} from 'ionic2-super-tabs'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-
+import {AboutPage} from '../pages/about/about';
 import { InterestsPage } from '../pages/interests/interests';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,7 +29,7 @@ import {VideosPage} from './../pages/videos/videos'
     ForYouPage,
     TrendingPage,
     VideosPage,
-    
+    AboutPage,
 
 
     WildlifePage,
@@ -54,6 +54,7 @@ import {VideosPage} from './../pages/videos/videos'
     MyApp,
     HomePage,
     ListPage,
+    AboutPage,
 
     InterestsPage,
     ForYouPage,

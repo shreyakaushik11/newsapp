@@ -12,8 +12,7 @@
       width: 100%;
       font-weight: bold;
       color: #fff;
-    }
-  
+    }  
   
   }
   .scroll-content {
@@ -35,11 +34,10 @@
     padding: 0px;
 }
 .done{
-    border: 3px solid springgreen;
+    opacity: 0.8;
+    // background-color: white;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-.col{
-    margin:-9px;
-}
 button{
     margin:auto;
     display:block;

@@ -1,68 +1,39 @@
-<ion-content>
-  <ion-grid>
-    
-    <ion-row>
-  
-      <ion-col col-6>
-        <ion-card class="size">
-          <span class="Wildlife">
-         
-          <img src="../../assets/imgs/kingfisher-2046453_1920.jpg"/>
-          <h1>Wildlife</h1>
-          </span>
-        </ion-card>
-        <ion-card class="size">
-            <span class="Entertainment">
-          <img src="../../assets/imgs/people-691777_640.jpg"/>
-            <h1>Entertainment</h1>
-            </span>
-        </ion-card>  
-        <ion-card class="size">
-            <span class="Science">
-            <img src="../../assets/imgs/dna-1811955_640.jpg"/>
-            <h1>Science</h1>
-        </span>
-          </ion-card>  
-          <ion-card class="size">
-              <span class="Health">
-            <img src="../../assets/imgs/running-573762_640.jpg"/>
-              <h1>Health</h1>
-              </span>
-          </ion-card>         
-                   
-      </ion-col>
-      <ion-col col-6>
-        <ion-card class="size">
-            <span class="Sports">
-          <img src="../../assets/imgs/football-3471402_640.jpg"/>
-          <h1>Sports</h1>
-       
-           
-         </span> 
-        </ion-card> 
-        <ion-card class="size">
-            <span class="Business">
-          <img src="../../assets/imgs/organic-1280537_640.jpg"/>
-          <h1>Business</h1>
-          </span>
-        </ion-card> 
-        <ion-card class="size">
-            <span class="General">
-          <img src="../../assets/imgs/windrader-2991696_640.jpg"/>
-      <h1>General</h1>
-      </span>
-        </ion-card> 
-        <ion-card class="size">
-            <span class="Technology">
-          <img src="../../assets/imgs/technology-785742_640.jpg"/>
-            <h1>Technology</h1>
-            </span>
-        </ion-card>
-  
-      </ion-col>
-    </ion-row>
-   
-    
-  </ion-grid>
-  </ion-content>
-  
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Interests</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<div class="scroll-content" style="margin-top: 64px;">
+    <ion-content class="card-background-page">
+        <h1>What's your interest?</h1>
+        <ion-grid>
+
+            <ion-row>
+
+                <ion-col>
+                    <ion-card (click)="toggle(i)" [ngClass]="{'done':i.status}" *ngFor="let i of interest; let i=index">
+
+                        <img src={{i.image}} height="119px" />
+
+                        <div class="card-title">{{i.name}}</div>
+                    </ion-card>
+                </ion-col>
+                <ion-col>
+                    <ion-card (click)="toggle(i)" [ngClass]="{'done':i.status}" *ngFor="let i of interest2; let i=index">
+
+                        <img src={{i.image}} height="119px" />
+                        <div class="card-title">{{i.name}}</div>
+
+                        <!-- <div class="card-title" *ngFor="let i=index;">{{i}}</div> -->
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <button (click)="fun()">Select one or more topics</button>
+    </ion-content>
+</div>

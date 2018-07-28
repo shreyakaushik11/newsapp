@@ -1,100 +1,46 @@
-.size {
-    width: calc(9px + 95.5%);
-    height: 12em;
-    
-}
-.grid {
-    padding:-10px;
-    margin-left: -7px;
-    
-    width: 100%;
-    margin-top: 130px
-}
+.card-background-page {
 
-img{
-    width:100%;
-    height:100%;
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+  
+    .card-title {
+      position: absolute;
+      top: 44%;
+      font-size: 1.5em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+  
+  
   }
-  [col-6] {
-    padding: 2px;
-}
-.text{
+  .scroll-content {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     position: absolute;
-    text-justify: 60%;
-    z-index: 8
-    
-} 
-
-.Wildlife :not(img){
-    position: absolute;;
-    color:white;
-    text-align:center;
-    width: 100%;
-    top: 13%;
-    text-decoration:underline;
+    z-index: 1;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    contain: size style layout;
 }
-.Wildlife:focus{
-    outline:none;
+.col{
+    margin: -7px;
+    padding: 0px;
 }
-.Entertainment :not(img){
-    position: absolute;;
-    color:white;
-    text-align:center;
-    width: 100%;
-    top: 37%;
-text-decoration:underline;
+.done{
+    border: 3px solid springgreen;
+  }
+.col{
+    margin:-9px;
 }
-.Science :not(img){
-    position: absolute;;
-    color:white;
-    text-align:center;
-    width: 100%;
-    top: 60%;
-    text-decoration:underline;
-
-}
-.Health :not(img){
-    position: absolute;;
-    color:white;
-    text-align:center;
-    width: 100%;
-    top: 85%;
-    text-decoration:underline;
-
-}
-.Sports :not(img){
-    position: absolute;;
-    color:white;
-    text-align:center;
-    width: 100%;
-    top: 13%;
-    text-decoration:underline;
-
-}
-.Business :not(img){
-    position: absolute;;
-    color:rgb(255, 249, 249);
-    text-align:center;
-    width: 100%;
-    top: 37%;
-    text-decoration:underline;
-
-}
-.General :not(img){
-    position: absolute;;
-    color:white;
-    text-align:center;
-    width: 100%;
-    top: 60%;
-    text-decoration:underline;
-
-}
-.Technology :not(img){
-    position: absolute;;
-    color:white;
-    text-align:center;
-    width: 100%;
-    top: 85%;
-    text-decoration:underline;
-
+button{
+    margin:auto;
+    display:block;
 }

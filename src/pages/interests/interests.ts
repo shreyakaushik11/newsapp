@@ -18,7 +18,7 @@ export class InterestsPage {
   
   interest2 = [{name:"General", image:"../../assets/imgs/general.jpg", status:false}, {name:"Health", image:"../../assets/imgs/health.jpg", status:false},{name:"Science", image:"../../assets/imgs/science.jpg", status:false}, {name:"Sports", image:"../../assets/imgs/sports.jpg", status:false}]
 
-  
+  arr=[];
   imgs=["../../assets/imgs/general.jpg", "../../assets/imgs/health.jpg", "../../assets/imgs/science.jpg", "../../assets/imgs/sports.jpg"]
   interests=["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology", "Wildlife"];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -30,6 +30,18 @@ export class InterestsPage {
 toggle(i){
   i.status=!i.status;
   console.log(i);
-}
+  if((i.status)==true){
+    this.arr.indexOf(i.name) === -1 ? this.arr.push(i.name) : console.log("This item already exists");
+    // this.arr.push(i.name);
+    console.log(this.arr);
+  }
+  else if((i.status)==false){
+      
+    this.arr.indexOf(i.name) !== -1 ? this.arr.splice(i.name) : console.log("This item already exists");
+    // this.arr.push(i.name);
+    console.log(this.arr);
+  }
 
+
+}
 }

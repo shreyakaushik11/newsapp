@@ -1,3 +1,4 @@
+import { LoginPage } from './../pages/login/login';
 import { WildlifePage } from './../pages/wildlife/wildlife';
 import { TechnologyPage } from './../pages/technology/technology';
 import { SportsPage } from './../pages/sports/sports';
@@ -18,8 +19,21 @@ import { InterestsPage } from '../pages/interests/interests';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {ForYouPage} from '../pages/for-you/for-you';
-import {TrendingPage} from './../pages/trending/trending'
-import {VideosPage} from './../pages/videos/videos'
+import {TrendingPage} from './../pages/trending/trending';
+import {VideosPage} from './../pages/videos/videos';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import firebase from 'firebase';
+
+import { Facebook } from '@ionic-native/facebook';
+// var config = {
+//   apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
+//   authDomain: "newsdb-a2b21.firebaseapp.com",
+//   databaseURL: "https://newsdb-a2b21.firebaseio.com",
+//   projectId: "newsdb-a2b21",
+//   storageBucket: "newsdb-a2b21.appspot.com",
+//   messagingSenderId: "301147156320",
+// };
 @NgModule({
   declarations: [
     MyApp,
@@ -30,8 +44,6 @@ import {VideosPage} from './../pages/videos/videos'
     TrendingPage,
     VideosPage,
     AboutPage,
-
-
     WildlifePage,
     TechnologyPage,
     SportsPage,
@@ -40,14 +52,15 @@ import {VideosPage} from './../pages/videos/videos'
     GeneralPage,
     EntertainmentPage,
     BusinessPage,
-
-    InterestsPage
-
+    InterestsPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    SuperTabsModule.forRoot()
+    SuperTabsModule.forRoot(),
+    // AngularFireModule.initializeApp(config),
+    // AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,7 +68,6 @@ import {VideosPage} from './../pages/videos/videos'
     HomePage,
     ListPage,
     AboutPage,
-
     InterestsPage,
     ForYouPage,
     TrendingPage,
@@ -68,13 +80,13 @@ import {VideosPage} from './../pages/videos/videos'
     GeneralPage,
     EntertainmentPage,
     BusinessPage,
-    InterestsPage
-
-
+    InterestsPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Facebook,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

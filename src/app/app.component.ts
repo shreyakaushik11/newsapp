@@ -1,3 +1,4 @@
+import { LoginPage } from './../pages/login/login';
 import { WildlifePage } from './../pages/wildlife/wildlife';
 import { EntertainmentPage } from './../pages/entertainment/entertainment';
 import { GeneralPage } from './../pages/general/general';
@@ -12,39 +13,55 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 // import { ListPage } from '../pages/list/list'; 
-
-import { ListPage } from '../pages/list/list'; 
+import { ListPage } from '../pages/list/list';
 import { InterestsPage } from '../pages/interests/interests';
-import {SuperTabs} from 'ionic2-super-tabs';
-import {ForYouPage} from '../pages/for-you/for-you';
-import {TrendingPage} from '../pages/trending/trending';
-import {AboutPage} from '../pages/about/about';
+import { SuperTabs } from 'ionic2-super-tabs';
+import { ForYouPage } from '../pages/for-you/for-you';
+import { TrendingPage } from '../pages/trending/trending';
+import { AboutPage } from '../pages/about/about';
+import firebase from 'firebase';
 @Component({
   templateUrl: 'app.html'
 })
+
+// var config = {
+//   apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
+//   authDomain: "newsdb-a2b21.firebaseapp.com",
+//   databaseURL: "https://newsdb-a2b21.firebaseio.com",
+//   projectId: "newsdb-a2b21",
+//   storageBucket: "newsdb-a2b21.appspot.com",
+//   messagingSenderId: "301147156320",
+// };
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = AboutPage ;
+  rootPage: any = AboutPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Business', component: BusinessPage },
-      { title: 'Entertainment', component: EntertainmentPage },
-      { title: 'General', component: GeneralPage },
-      { title: 'Health', component: HealthPage },
-      { title: 'Sports', component: SportsPage },
-      { title: 'Science', component: SciencePage },
-      { title: 'Technology', component: TechnologyPage },
-      { title: 'Wildlife', component: WildlifePage },
-      { title: 'Interests', component: InterestsPage }
-    ];
+    firebase.initializeApp({
+    apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
+      authDomain: "newsdb-a2b21.firebaseapp.com",
+        databaseURL: "https://newsdb-a2b21.firebaseio.com",
+          projectId: "newsdb-a2b21",
+            storageBucket: "newsdb-a2b21.appspot.com",
+              messagingSenderId: "301147156320",
+    })
+                // used for an example of ngFor and navigation
+                this.pages = [
+                  { title: 'Home', component: HomePage },
+                  { title: 'Business', component: BusinessPage },
+                  { title: 'Entertainment', component: EntertainmentPage },
+                  { title: 'General', component: GeneralPage },
+                  { title: 'Health', component: HealthPage },
+                  { title: 'Sports', component: SportsPage },
+                  { title: 'Science', component: SciencePage },
+                  { title: 'Technology', component: TechnologyPage },
+                  { title: 'Wildlife', component: WildlifePage },
+                  { title: 'Interests', component: InterestsPage },
+                  { title: 'Login', component: LoginPage }
+                ];
 
   }
 

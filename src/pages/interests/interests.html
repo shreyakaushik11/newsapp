@@ -40,7 +40,7 @@
                 </ion-col>
             </ion-row>
         </ion-grid>
-        <button (click)="fun()">Select one or more topics</button>
+        <button ion-button [disabled]="arr.length < 3">Select one or more topics</button>
     </ion-content>
 </div>
 

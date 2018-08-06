@@ -20,11 +20,22 @@
 
 
 <ion-content padding>
+
   <button ion-button icon-left (click)="facebookLogin()">
     <ion-icon name="logo-facebook"></ion-icon>
     LOGIN WITH FACEBOOK
+    <div text-center class="align2">
+  <button ion-button icon-left (click)="fbLogin()">
+    
+    <ion-icon color="blue" name="logo-facebook"></ion-icon>
+   <span style="text-transform: initial;"> Login with Facebook</span> 
+
   </button>
-  <button ion-button block (click)="googleLogin()" *ngIf="!userProfile">
-    GOOGLE LOGIN
+</div>
+<div text-center class="align1">
+  <button ion-button icon-left (click)="googleLogin()" *ngIf="!userProfile">
+    <ion-icon color="danger" name="logo-google"></ion-icon>
+   <span  style="text-transform: initial;"> Login with Google</span>
   </button>
+  </div>
 </ion-content>

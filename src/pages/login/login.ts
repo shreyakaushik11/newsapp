@@ -56,7 +56,6 @@ facebookLogin(): Promise<any> {
     .then( response => {
       const facebookCredential = firebase.auth.FacebookAuthProvider
         .credential(response.authResponse.accessToken);
-
       firebase.auth().signInWithCredential(facebookCredential)
         .then( success => { 
           console.log("Firebase success: " + JSON.stringify(success)); 
@@ -75,7 +74,7 @@ facebookLogin(): Promise<any> {
   //   }).catch(err=>{
   //     alert(JSON.stringify(err))
   //   })
-   
+
   googleLogin():void {
     const provider = new firebase.auth.GoogleAuthProvider();
   

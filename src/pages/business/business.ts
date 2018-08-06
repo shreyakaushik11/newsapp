@@ -17,6 +17,9 @@ export class BusinessPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+ 
+  
+ 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BusinessPage');

@@ -28,18 +28,7 @@ export class LoginPage {
 }
 
   
-  // fbLogin(){
-  //   this.facebook.login(['email']).then(res=>{
-  //     const fc=firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
-  //     firebase.auth().signInWithCredential(fc).then(fs=>{
-  //       alert("firebase sec");
-  //     }).catch(ferr=>{
-  //       alert("firebase error");
-  //     });
-  //   }).catch(err=>{
-  //     alert(JSON.stringify(err))
-  //   })
-   
+  
   googleLogin():void {
     const provider = new firebase.auth.GoogleAuthProvider();
   

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AboutPage } from '../about/about';
 
 /**
  * Generated class for the EntertainmentPage page.
@@ -20,5 +21,7 @@ export class EntertainmentPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EntertainmentPage');
   }
-
+  nextPage(){
+    this.navCtrl.push(AboutPage);
+  }
 }

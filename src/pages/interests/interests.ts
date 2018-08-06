@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -30,18 +31,21 @@ export class InterestsPage {
 toggle(i){
   i.status=!i.status;
   console.log(i);
-  if((i.status)==true){
-    this.arr.indexOf(i.name) === -1 ? this.arr.push(i.name) : console.log("This item already exists");
-    // this.arr.push(i.name);
-    console.log(this.arr);
-  }
-  else if((i.status)==false){
+  // if((i.status)==true){
+  //   this.arr.indexOf(i.name) === -1 ? this.arr.push(i.name) : console.log("This item already exists");
+  //   // this.arr.push(i.name);
+  //   console.log(this.arr);
+  // }
+  // else if((i.status)==false){
       
-    this.arr.indexOf(i.name) !== -1 ? this.arr.splice(i.name) : console.log("This item already exists");
-    // this.arr.push(i.name);
-    console.log(this.arr);
-  }
+  //   this.arr.indexOf(i.name) !== -1 ? this.arr.splice(i.name) : console.log("This item already exists");
+  //   // this.arr.push(i.name);
+  //   console.log(this.arr);
+  // }
 
 
+}
+nextPage(){
+  this.navCtrl.push(HomePage);
 }
 }

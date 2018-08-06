@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AboutPage } from '../about/about';
 
 /**
  * Generated class for the TechnologyPage page.
@@ -19,6 +20,9 @@ export class TechnologyPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TechnologyPage');
+  }
+  nextPage(){
+    this.navCtrl.push(AboutPage);
   }
 
 }

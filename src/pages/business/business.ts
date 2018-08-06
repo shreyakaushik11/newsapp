@@ -1,3 +1,4 @@
+import { AboutPage } from './../about/about';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -20,5 +21,7 @@ export class BusinessPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BusinessPage');
   }
-
+  nextPage(){
+    this.navCtrl.push(AboutPage);
+  }
 }

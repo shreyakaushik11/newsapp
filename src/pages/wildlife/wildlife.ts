@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AboutPage } from '../about/about';
 
 /**
  * Generated class for the WildlifePage page.
@@ -19,6 +20,9 @@ export class WildlifePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WildlifePage');
+  }
+  nextPage(){
+    this.navCtrl.push(AboutPage);
   }
 
 }

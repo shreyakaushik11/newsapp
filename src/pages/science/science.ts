@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AboutPage } from '../about/about';
 
 /**
  * Generated class for the SciencePage page.
@@ -19,6 +20,9 @@ export class SciencePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SciencePage');
+  }
+  nextPage(){
+    this.navCtrl.push(AboutPage);
   }
 
 }

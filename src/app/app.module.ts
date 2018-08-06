@@ -21,19 +21,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {ForYouPage} from '../pages/for-you/for-you';
 import {TrendingPage} from './../pages/trending/trending';
 import {VideosPage} from './../pages/videos/videos';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import firebase from 'firebase';
-
+import { AngularFireModule } from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
 import { Facebook } from '@ionic-native/facebook';
-// var config = {
-//   apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
-//   authDomain: "newsdb-a2b21.firebaseapp.com",
-//   databaseURL: "https://newsdb-a2b21.firebaseio.com",
-//   projectId: "newsdb-a2b21",
-//   storageBucket: "newsdb-a2b21.appspot.com",
-//   messagingSenderId: "301147156320",
-// };
+const config = {
+  apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
+  authDomain: "newsdb-a2b21.firebaseapp.com",
+  databaseURL: "https://newsdb-a2b21.firebaseio.com",
+  projectId: "newsdb-a2b21",
+  storageBucket: "newsdb-a2b21.appspot.com",
+  messagingSenderId: "301147156320"
+};
 @NgModule({
   declarations: [
     MyApp,
@@ -59,8 +58,8 @@ import { Facebook } from '@ionic-native/facebook';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     SuperTabsModule.forRoot(),
-    // AngularFireModule.initializeApp(config),
-    // AngularFireAuthModule
+    AngularFireModule.initializeApp(config),
+    AngularFirestoreModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

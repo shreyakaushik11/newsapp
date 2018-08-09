@@ -1,7 +1,9 @@
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
+import { User } from 'firebase';
 /**
  * Generated class for the InterestsPage page.
  *
@@ -14,6 +16,8 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'interests.html',
 })
 export class InterestsPage {
+  userCollection: AngularFirestoreCollection<User>;
+  users: Observable<User[]>;
   // interest={name:["Wildlife"], status:false, images:["", "", "../../assets/imgs/entertainment.jpg", "../../assets/imgs/technology.jpg"]};
   interest = [{name:"Wildlife", image:"../../assets/imgs/wildlife.jpg", status:false}, {name:"Business", image:"../../assets/imgs/business.jpg", status:false},{name:"Entertainment", image:"../../assets/imgs/entertainment.jpg", status:false}, {name:"Technology", image:"../../assets/imgs/technology.jpg", status:false}]
   
@@ -22,7 +26,9 @@ export class InterestsPage {
   arr=[];
   imgs=["../../assets/imgs/general.jpg", "../../assets/imgs/health.jpg", "../../assets/imgs/science.jpg", "../../assets/imgs/sports.jpg"]
   interests=["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology", "Wildlife"];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private afs:AngularFirestore) {
+    this.userCollection = afs.collection<User>('users');
+
   }
 
   ionViewDidLoad() {
@@ -45,7 +51,16 @@ toggle(i){
 
 
 }
-nextPage(){
+continue(){
+  // const userCollection: AngularFirestoreCollection<User>;
+// return this.userCollection.snapshotChanges().map(actions => {       
+//   return actions.map(a => {
+//     const data = a.payload.doc.data() as User;
+//     data.email = a.payload.doc.id;
+//     return data.email;
+
+//   });
+// });
   this.navCtrl.push(HomePage);
 }
 }

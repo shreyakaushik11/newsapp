@@ -4,7 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SuperTabs } from 'ionic2-super-tabs';
 import {ForYouPage} from '../for-you/for-you'
 import {VideosPage} from '../videos/videos';
-import {TrendingPage} from '../trending/trending'
+import {TrendingPage} from '../trending/trending';
+import {HttpClient} from '@angular/common/http';
 /**
  * Generated class for the HomePage page.
  *
@@ -18,6 +19,7 @@ import {TrendingPage} from '../trending/trending'
   templateUrl: 'home.html',
 })
 export class HomePage { 
+
   pages=[
     
   {pageName:ForYouPage,title:"For You", icon:"heart"},
@@ -27,7 +29,7 @@ export class HomePage {
 ];
 selectedTab=0;
   @ViewChild(SuperTabs) SuperTabs: SuperTabs;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http:HttpClient) {
   }
   onTabSelect(ev:any){
     this.selectedTab=ev.index
@@ -36,5 +38,6 @@ selectedTab=0;
  nextPage(){
    this.navCtrl.push(AboutPage);
  }
+ 
 
 }

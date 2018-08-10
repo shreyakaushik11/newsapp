@@ -25,6 +25,9 @@ import firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import { Facebook } from '@ionic-native/facebook';
+import { HttpClientModule } from '@angular/common/http';
+import { DataProvider } from '../providers/data/data';
+
 const config = {
   apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
   authDomain: "newsdb-a2b21.firebaseapp.com",
@@ -59,6 +62,7 @@ const config = {
     IonicModule.forRoot(MyApp),
     SuperTabsModule.forRoot(),
     AngularFireModule.initializeApp(config),
+    HttpClientModule,
     AngularFirestoreModule
   ],
   bootstrap: [IonicApp],
@@ -86,7 +90,8 @@ const config = {
     StatusBar,
     SplashScreen,
     Facebook,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider
   ]
 })
 export class AppModule {}

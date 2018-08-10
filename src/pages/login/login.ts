@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase';
 import { Facebook } from '@ionic-native/facebook';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 // import { finalize } from 'rxjs/operators';
 // import { auth } from 'firebase';
@@ -13,43 +13,45 @@ import { Observable } from 'rxjs';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-export interface User { name: string, photoUrl:string,email:string}
-
+export interface User { displayName:string, photoUrl:string, email:string};
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  // user:User = {}  
-  name;
+  userData:User = {displayName:'',photoUrl:'', email:''} 
+  displayName;
   email;
   photoUrl;
   public userProfile:any = null;
   userCollection: AngularFirestoreCollection<User>;
   users: Observable<User[]>;
-
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams, private facebook: Facebook, private afs: AngularFirestore) {
     this.userCollection = afs.collection<User>('users');
     firebase.auth().onAuthStateChanged( user => {
       if (user) {
-        this.name = user.displayName;
-        this.email = user.email;
-        this.photoUrl = user.photoURL;
-        console.log(this.name);
-        console.log(this.email);
-        console.log(this.photoUrl);
+        // this.displayName = user.displayName;
+        // this.email = user.email;
+        // this.photoUrl = user.photoURL;
+        this.userData.displayName=user.displayName;
+        this.userData.email=user.email;
+        this.userData.photoUrl=user.photoURL;
+        // console.log(this.displayName);
+        // console.log(this.email);
+        // console.log(this.photoUrl);
         this.userProfile = user;
-        
+        console.log(this.userProfile);
+        // this.userCollection.add(this.userData)
+
+        this.userCollection.doc(this.userData.email).set(this.userData)
+
       } else {
         console.log("There's no user here");
       }
   });
-      
-
   // this.userCollection.add(this.email)
-
-
 }
 facebookLogin(): Promise<any> {
   return this.facebook.login(['email'])

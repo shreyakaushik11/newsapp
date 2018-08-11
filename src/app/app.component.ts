@@ -12,7 +12,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
-// import { ListPage } from '../pages/list/list'; 
 import { ListPage } from '../pages/list/list';
 import { InterestsPage } from '../pages/interests/interests';
 import { SuperTabs } from 'ionic2-super-tabs';
@@ -20,18 +19,19 @@ import { ForYouPage } from '../pages/for-you/for-you';
 import { TrendingPage } from '../pages/trending/trending';
 import { AboutPage } from '../pages/about/about';
 import firebase from 'firebase';
+
 @Component({
   templateUrl: 'app.html'
 })
 
-// var config = {
-//   apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
-//   authDomain: "newsdb-a2b21.firebaseapp.com",
-//   databaseURL: "https://newsdb-a2b21.firebaseio.com",
-//   projectId: "newsdb-a2b21",
-//   storageBucket: "newsdb-a2b21.appspot.com",
-//   messagingSenderId: "301147156320",
-// };
+var config = {
+ apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
+  authDomain: "newsdb-a2b21.firebaseapp.com",
+  databaseURL: "https://newsdb-a2b21.firebaseio.com",
+  projectId: "newsdb-a2b21",
+   storageBucket: "newsdb-a2b21.appspot.com",
+  messagingSenderId: "301147156320",
+ };
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 

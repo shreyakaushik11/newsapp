@@ -24,14 +24,6 @@ import firebase from 'firebase';
   templateUrl: 'app.html'
 })
 
-var config = {
- apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
-  authDomain: "newsdb-a2b21.firebaseapp.com",
-  databaseURL: "https://newsdb-a2b21.firebaseio.com",
-  projectId: "newsdb-a2b21",
-   storageBucket: "newsdb-a2b21.appspot.com",
-  messagingSenderId: "301147156320",
- };
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 

@@ -1,7 +1,7 @@
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { User } from 'firebase';
 /**
@@ -10,12 +10,15 @@ import { User } from 'firebase';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+// export interface User { displayName:string, photoUrl:string, email:string, interests:['']};
 
 @Component({
   selector: 'page-interests',
   templateUrl: 'interests.html',
 })
 export class InterestsPage {
+  // userData:User = {displayName:'', photoURL:'', email:'', interests:['']} 
+  i={name:"", status:false};
   userCollection: AngularFirestoreCollection<User>;
   users: Observable<User[]>;
   // interest={name:["Wildlife"], status:false, images:["", "", "../../assets/imgs/entertainment.jpg", "../../assets/imgs/technology.jpg"]};
@@ -52,13 +55,15 @@ toggle(i){
 
 }
 continue(){
+  // this.interests.push(this.i.name);
+  // this.userCollection.doc(this.userData.email).set(this.userData)
+
   // const userCollection: AngularFirestoreCollection<User>;
 // return this.userCollection.snapshotChanges().map(actions => {       
 //   return actions.map(a => {
 //     const data = a.payload.doc.data() as User;
 //     data.email = a.payload.doc.id;
 //     return data.email;
-
 //   });
 // });
   this.navCtrl.push(HomePage);

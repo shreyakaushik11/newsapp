@@ -13,14 +13,14 @@ import { Observable } from 'rxjs';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-export interface User { displayName:string, photoUrl:string, email:string};
+export interface User { displayName:string, photoUrl:string, email:string, interests:['']};
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  userData:User = {displayName:'',photoUrl:'', email:''} 
+  userData:User = {displayName:'',photoUrl:'', email:'', interests:['']} 
   displayName;
   email;
   photoUrl;

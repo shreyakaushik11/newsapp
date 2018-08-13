@@ -24,6 +24,20 @@ export class SportsPage {
   }
 
   ionViewDidLoad() {
+    this.http.get(this.url).subscribe(data => {
+      for(this.i=0;this.i<data['articles'].length;this.i++)
+      {
+        this.data = data;
+       
+      
+      console.log(data);
+
+     
+    }
+    }, err => {
+      console.log(err);
+      
+    });
     console.log('ionViewDidLoad SportsPage');
   }
   nextPage(){

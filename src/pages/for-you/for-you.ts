@@ -17,15 +17,12 @@ import {DataProvider} from '../../providers/data/data';
 })
 export class ForYouPage {
 
-  
-  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http:HttpClient) {}
   
-
-  ionViewDidLoad() {
-   
-  }
+url='https://newsapi.org/v2/top-headlines?country=in&apiKey=7c48c5e4372b458682302a0b9fdd44d8';
+  ionViewDidLoad(){}
+ }
   // getdata(){
 
   //     this.http.get(this.url).subscribe(data => {
@@ -50,6 +47,6 @@ export class ForYouPage {
       
      
   //   }}
-}
+
   
 

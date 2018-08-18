@@ -14,25 +14,17 @@ import {DataProvider} from '../../providers/data/data';
   templateUrl: 'general.html',
 })
 export class GeneralPage {
-  data;
+  data={};
  i;
-
- 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http:HttpClient, public data:DataProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http:HttpClient) {
   }
   url='https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=f78729cd63a2418bb648a26a3a6a3af9';
   ionViewDidLoad() {
     this.http.get(this.url).subscribe(data => {
-      for(this.i=0;this.i<data['articles'].length;this.i++)
-      {
-        this.data = data;
-       
+      // for(this.i=0;this.i<data['articles'].length;this.i++)
       
+        this.data = data;
       console.log(data);
-
-     
-    }
     }, err => {
       console.log(err);
       

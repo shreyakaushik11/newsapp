@@ -27,6 +27,7 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
 import { Facebook } from '@ionic-native/facebook';
 import { HttpClientModule } from '@angular/common/http';
 import { DataProvider } from '../providers/data/data';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 const config = {
   apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
@@ -91,7 +92,8 @@ const config = {
     SplashScreen,
     Facebook,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataProvider
+    DataProvider,
+    InAppBrowser
   ]
 })
 export class AppModule {}

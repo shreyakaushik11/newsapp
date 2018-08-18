@@ -17,24 +17,23 @@ import {DataProvider} from '../../providers/data/data';
   templateUrl: 'technology.html',
 })
 export class TechnologyPage {
-  data;
+  data={};
   i;
   url='https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=7c48c5e4372b458682302a0b9fdd44d8';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http:HttpClient, public data:DataProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http:HttpClient) {
   }
 
   ionViewDidLoad() {
     this.http.get(this.url).subscribe(data => {
-      for(this.i=0;this.i<data['articles'].length;this.i++)
-      {
+      
         this.data = data;
        
       
       console.log(data);
 
      
-    }
+    
     }, err => {
       console.log(err);
       

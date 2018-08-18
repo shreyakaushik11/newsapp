@@ -14,25 +14,21 @@ import {DataProvider} from '../../providers/data/data';
   templateUrl: 'wildlife.html',
 })
 export class WildlifePage {
-  data;
+  data={};
  i;
 
- 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http:HttpClient, public data:DataProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http:HttpClient) {
   }
   url='https://newsapi.org/v2/top-headlines?sources=national-geographic&apiKey=7c48c5e4372b458682302a0b9fdd44d8';
   ionViewDidLoad() {
     this.http.get(this.url).subscribe(data => {
-      for(this.i=0;this.i<data['articles'].length;this.i++)
-      {
+  
         this.data = data;
        
       
       console.log(data);
 
-     
-    }
+    
     }, err => {
       console.log(err);
       

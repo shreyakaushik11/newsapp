@@ -19,9 +19,7 @@ export class ForYouPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private http:HttpClient) {}
-  
-url='https://newsapi.org/v2/top-headlines?country=in&apiKey=7c48c5e4372b458682302a0b9fdd44d8';
-  ionViewDidLoad(){}
+    ionViewDidLoad(){}
  }
   // getdata(){
 

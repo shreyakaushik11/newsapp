@@ -94,7 +94,6 @@
     <plugin name="cordova-plugin-buildinfo" spec="^2.0.1" />
     <plugin name="cordova-universal-links-plugin" spec="^1.2.1" />
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
-    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="cordova-plugin-facebook4" spec="^2.2.0">
         <variable name="APP_ID" value="190361731831294" />
         <variable name="APP_NAME" value="news-app" />
@@ -105,4 +104,5 @@
         <variable name="ANDROID_HOST" value=" " />
         <variable name="ANDROID_PATHPREFIX" value="/" />
     </plugin>
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
 </widget>

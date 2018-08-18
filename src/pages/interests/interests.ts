@@ -55,17 +55,6 @@ toggle(i){
 
 }
 continue(){
-  // this.interests.push(this.i.name);
-  // this.userCollection.doc(this.userData.email).set(this.userData)
-
-  // const userCollection: AngularFirestoreCollection<User>;
-// return this.userCollection.snapshotChanges().map(actions => {       
-//   return actions.map(a => {
-//     const data = a.payload.doc.data() as User;
-//     data.email = a.payload.doc.id;
-//     return data.email;
-//   });
-// });
   this.navCtrl.push(HomePage);
 }
 }

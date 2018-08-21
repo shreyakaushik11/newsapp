@@ -1,3 +1,4 @@
+import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AboutPage } from '../about/about';
@@ -21,7 +22,7 @@ export class TechnologyPage {
   i;
   url='https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=7c48c5e4372b458682302a0b9fdd44d8';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http:HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private iab: InAppBrowser,private http:HttpClient) {
   }
 
   ionViewDidLoad() {
@@ -39,6 +40,14 @@ export class TechnologyPage {
       
     });
     console.log('ionViewDidLoad TechnologyPage');
+  }
+  inapp(i){
+    console.log(i)
+    const options: InAppBrowserOptions = {
+      zoom : 'no'
+    }
+    const browser = this.iab.create(i.url,'_self', options);
+    // browser.open();
   }
   nextPage(){
     this.navCtrl.push(AboutPage);

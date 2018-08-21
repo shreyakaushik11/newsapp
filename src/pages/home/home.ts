@@ -24,7 +24,7 @@ export class HomePage {
     
   {pageName:ForYouPage,title:"For You", icon:"heart"},
   {pageName:TrendingPage, title:"Trending" ,icon:"trending-up"},
-  {pageName: VideosPage,title:"Videos",icon:"videocam"}
+  {pageName: VideosPage,title:"All News",icon:"videocam"}
   
 ];
 selectedTab=0;

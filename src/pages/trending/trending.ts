@@ -1,6 +1,8 @@
+import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {HttpClient} from '@angular/common/http';
+import { AboutPage } from '../about/about';
 // import {DataProvider} from '../../providers/data/data';
 /**
  * Generated class for the TrendingPage page.
@@ -17,7 +19,7 @@ export class TrendingPage {
   data={};
  i;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http:HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private iab:InAppBrowser,private http:HttpClient) {
   }
   url='https://newsapi.org/v2/top-headlines?country=in&apiKey=7c48c5e4372b458682302a0b9fdd44d8';
   ionViewDidLoad() {
@@ -29,7 +31,19 @@ export class TrendingPage {
       
     });
   
-  }}
+  }
+  inapp(i){
+    console.log(i)
+    const options: InAppBrowserOptions = {
+      zoom : 'no'
+    }
+    const browser = this.iab.create(i.url,'_self', options);
+    // browser.open();
+  }
+  nextPage(){
+    this.navCtrl.push(AboutPage);
+  }
+}
 
  
     

@@ -14,7 +14,7 @@
 
 
 <ion-content>
-    <ion-card *ngFor="let i of data.articles;  let i=index;">
+    <ion-card *ngFor="let i of data.articles;  let i=index;" (click)="inapp(i)">
         <img src={{i.urlToImage}}/>
         <ion-card-content> 
          {{i.title}}

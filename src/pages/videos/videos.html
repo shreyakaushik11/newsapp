@@ -1,5 +1,5 @@
 <!--
-  Generated template for the VideosPage page.
+  Generated template for the TrendingPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,12 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Videos</ion-title>
+    <ion-title>All News</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+    <ion-card *ngFor="let i of data.articles;  let i=index;" (click)="inapp(i)">
+        <img src={{i.urlToImage}}/>
+        <ion-card-content> 
+         {{i.title}}
+        </ion-card-content>
+        </ion-card>
 
 </ion-content>

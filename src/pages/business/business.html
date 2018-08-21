@@ -1,35 +1,24 @@
 
 <ion-header no-border >
-    <ion-navbar color="dark">
-      <ion-buttons end>
-        <button ion-button icon-only (click)="nextPage()">
-            <ion-icon name="contact"></ion-icon>
-          </button>
-        </ion-buttons>
-    <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Business</ion-title>
+  <ion-navbar color="dark">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="nextPage()">
+          <ion-icon name="contact"></ion-icon>
+        </button>
+      </ion-buttons>
+  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Business</ion-title>
 </ion-navbar>
 
 </ion-header>
-<ion-grid>
+<ion-content padding>
 
-  <ion-row>
-
-      <ion-col>
-          <ion-card>
-            <img src="../../assets/imgs/concert-768722_640.jpg"/>
-  <ion-card-content>
-    <ion-card-title>
-      Nine Inch Nails Live
-      </ion-card-title>
-    <p>
-      The most popular industrial group ever, and largely
-      responsible for bringing the music to a mass audience.
-    </p>
+<ion-card *ngFor="let i of data.articles;  let i=index;" (click)="inapp(i)">
+  <img src={{i.urlToImage}}/>
+  <ion-card-content> 
+   {{i.title}}
   </ion-card-content>
-          </ion-card>
-      </ion-col>
-     
-  </ion-row>
+  </ion-card>
+  </ion-content>

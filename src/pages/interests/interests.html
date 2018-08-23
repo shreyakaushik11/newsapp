@@ -22,7 +22,7 @@
             <ion-row>
 
                 <ion-col>
-                    <ion-card (click)="toggle(i)" [ngClass]="{'done':i.status}" *ngFor="let i of interest; let i=index">
+                    <ion-card (click)="toggle(i)" [ngClass]="{'done':i.status}" *ngFor="let i of interest; let j=index">
 
                         <img src={{i.image}} height="119px" />
 
@@ -30,7 +30,7 @@
                     </ion-card>
                 </ion-col>
                 <ion-col>
-                    <ion-card (click)="toggle(i)" [ngClass]="{'done':i.status}" *ngFor="let i of interest2; let i=index">
+                    <ion-card (click)="toggle(i)" [ngClass]="{'done':i.status}" *ngFor="let i of interest2; let j=index">
 
                         <img src={{i.image}} height="119px" />
                         <div class="card-title">{{i.name}}</div>

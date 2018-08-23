@@ -28,7 +28,7 @@ import { Facebook } from '@ionic-native/facebook';
 import { HttpClientModule } from '@angular/common/http';
 import { DataProvider } from '../providers/data/data';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-
+import { NativeStorage } from '@ionic-native/native-storage'
 const config = {
   apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
   authDomain: "newsdb-a2b21.firebaseapp.com",
@@ -93,7 +93,8 @@ const config = {
     Facebook,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
-    InAppBrowser
+    InAppBrowser,
+    NativeStorage
   ]
 })
 export class AppModule {}

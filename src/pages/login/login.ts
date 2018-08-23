@@ -4,6 +4,8 @@ import firebase from 'firebase';
 import { Facebook } from '@ionic-native/facebook';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
+import { NativeStorage } from '@ionic-native/native-storage';
+
 // import { finalize } from 'rxjs/operators';
 // import { auth } from 'firebase';
 // import { map } from 'rxjs/operators';
@@ -13,22 +15,23 @@ import { Observable } from 'rxjs';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-export interface User { displayName:string, photoUrl:string, email:string, interests:['']};
+export interface User { displayName:string, photoUrl:string, email:string};
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  userData:User = {displayName:'',photoUrl:'', email:'', interests:['']} 
+  userData:User = {displayName:'',photoUrl:'', email:''} 
   displayName;
   email;
   photoUrl;
+
   public userProfile:any = null;
   userCollection: AngularFirestoreCollection<User>;
   users: Observable<User[]>;
  
-  constructor(public navCtrl: NavController, public navParams: NavParams, private facebook: Facebook, private afs: AngularFirestore) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage, private facebook: Facebook, private afs: AngularFirestore) {
     this.userCollection = afs.collection<User>('users');
     firebase.auth().onAuthStateChanged( user => {
       if (user) {
@@ -38,13 +41,24 @@ export class LoginPage {
         this.userData.displayName=user.displayName;
         this.userData.email=user.email;
         this.userData.photoUrl=user.photoURL;
-        // console.log(this.displayName);
+        console.log(this.userData.displayName);
         // console.log(this.email);
         // console.log(this.photoUrl);
+        
         this.userProfile = user;
         console.log(this.userProfile);
         // this.userCollection.add(this.userData)
-
+  //       this.nativeStorage.setItem('userD', {
+  //         name: this.userData.displayName,
+  //         email: this.userData.email,
+  //         picture: this.userData.photoUrl
+  //       })
+  //       this.nativeStorage.getItem('userD')
+  // .then(
+  //   data => console.log(data),
+  //   error => console.error(error)
+  // );
+        
         this.userCollection.doc(this.userData.email).set(this.userData)
 
       } else {

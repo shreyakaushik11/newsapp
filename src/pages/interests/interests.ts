@@ -41,18 +41,16 @@ toggle(i){
   i.status=!i.status;
   console.log(i);
   if((i.status)==true){
-    this.arr.indexOf(i.name) === -1 ? this.arr.push(i.name) : console.log("This item already exists");
-   // this.arr.push(i.name);
+    // this.arr.indexOf(i.name) === -1 ? this.arr.push(i.name) : console.log("This item already exists");
+   this.arr.push(i.name);
     console.log(this.arr);
    }
   else if((i.status)==false){
       console.log(i);
-    this.arr.indexOf(i.name) !== -1 ? this.arr.splice(i, 1) : console.log("This item already exists");
-    // this.arr.push(i.name);
+   var j= this.arr.indexOf(i.name) 
+     this.arr.splice(j, 1);
     console.log(this.arr);
   }
-
-
 }
 continue(){
   this.navCtrl.push(HomePage);

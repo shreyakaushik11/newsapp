@@ -20,7 +20,7 @@ export class AboutPage {
   }
 
   ionViewDidLoad() {
-  
+    
     this.user = this.nativeStorage.getItem('user')
     this.user.picture = this.nativeStorage.getItem('user.picture')
     console.log(this.user);

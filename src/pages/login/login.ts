@@ -1,3 +1,4 @@
+import { AboutPage } from './../about/about';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase';
@@ -119,6 +120,7 @@ facebookLogin(): Promise<any> {
   // }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+
   }
 
 }

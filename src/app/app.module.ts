@@ -29,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataProvider } from '../providers/data/data';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { NativeStorage } from '@ionic-native/native-storage'
+import { UserProvider } from '../providers/user/user';
 const config = {
   apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
   authDomain: "newsdb-a2b21.firebaseapp.com",
@@ -94,7 +95,8 @@ const config = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
     InAppBrowser,
-    NativeStorage
+    NativeStorage,
+    UserProvider
   ]
 })
 export class AppModule {}

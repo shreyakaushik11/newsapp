@@ -1,12 +1,11 @@
-import { AboutPage } from './../about/about';
-import { Component } from '@angular/core';
+import { UserProvider } from './../../providers/user/user';
+import { Component, Injectable } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase';
 import { Facebook } from '@ionic-native/facebook';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { NativeStorage } from '@ionic-native/native-storage';
-
 // import { finalize } from 'rxjs/operators';
 // import { auth } from 'firebase';
 // import { map } from 'rxjs/operators';
@@ -32,7 +31,7 @@ export class LoginPage {
   userCollection: AngularFirestoreCollection<User>;
   users: Observable<User[]>;
  
-  constructor(public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage, private facebook: Facebook, private afs: AngularFirestore) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage, private facebook: Facebook, private afs: AngularFirestore, private u:UserProvider) {
     this.userCollection = afs.collection<User>('users');
     firebase.auth().onAuthStateChanged( user => {
       if (user) {
@@ -49,17 +48,13 @@ export class LoginPage {
         this.userProfile = user;
         console.log(this.userProfile);
         // this.userCollection.add(this.userData)
-  //       this.nativeStorage.setItem('userD', {
-  //         name: this.userData.displayName,
-  //         email: this.userData.email,
-  //         picture: this.userData.photoUrl
-  //       })
-  //       this.nativeStorage.getItem('userD')
-  // .then(
-  //   data => console.log(data),
-  //   error => console.error(error)
-  // );
-        
+      this.nativeStorage.setItem('user', {
+          name: this.userData.displayName,
+          email: this.userData.email,
+          picture: this.userData.photoUrl
+        }).then(() => {
+          console.log("credentials stored");}
+        )
         this.userCollection.doc(this.userData.email).set(this.userData)
 
       } else {

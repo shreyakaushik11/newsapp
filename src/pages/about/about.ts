@@ -21,10 +21,10 @@ export class AboutPage {
 
   ionViewDidLoad() {
     
-    this.user = this.nativeStorage.getItem('user')
-    this.user.picture = this.nativeStorage.getItem('user.picture')
-    console.log(this.user);
-    console.log(this.user.picture);
+    this.nativeStorage.getItem('user').then((user) => {
+      console.log("this is email: " + user.email);
+      console.log("this is password: " + user.pasword);
+  })
     console.log('ionViewDidLoad AboutPage');
   }
 

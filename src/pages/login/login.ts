@@ -1,3 +1,4 @@
+import { DataProvider } from './../../providers/data/data';
 import { UserProvider } from './../../providers/user/user';
 import { Component, Injectable } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -6,6 +7,7 @@ import { Facebook } from '@ionic-native/facebook';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { NativeStorage } from '@ionic-native/native-storage';
+
 // import { finalize } from 'rxjs/operators';
 // import { auth } from 'firebase';
 // import { map } from 'rxjs/operators';
@@ -31,13 +33,15 @@ export class LoginPage {
   userCollection: AngularFirestoreCollection<User>;
   users: Observable<User[]>;
  
-  constructor(public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage, private facebook: Facebook, private afs: AngularFirestore, private u:UserProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public data: DataProvider, private nativeStorage: NativeStorage, private facebook: Facebook, private afs: AngularFirestore, private u:UserProvider) {
     this.userCollection = afs.collection<User>('users');
     firebase.auth().onAuthStateChanged( user => {
       if (user) {
         // this.displayName = user.displayName;
         // this.email = user.email;
         // this.photoUrl = user.photoURL;
+        this.data.name=user.displayName;
+        this.data.photo=user.photoURL;
         this.userData.displayName=user.displayName;
         this.userData.email=user.email;
         this.userData.photoUrl=user.photoURL;

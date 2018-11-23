@@ -1,3 +1,4 @@
+import { PrimaryTabsModulePage } from './../pages/primary-tabs-module/primary-tabs-module';
 import { LoginPage } from './../pages/login/login';
 import { WildlifePage } from './../pages/wildlife/wildlife';
 import { EntertainmentPage } from './../pages/entertainment/entertainment';
@@ -27,7 +28,7 @@ import firebase from 'firebase';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = AboutPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{ title: string, component: any }>;
 
@@ -42,7 +43,7 @@ export class MyApp {
     })
                 // used for an example of ngFor and navigation
                 this.pages = [
-                  { title: 'Home', component: HomePage },
+                  { title: 'Home', component: PrimaryTabsModulePage },
                   { title: 'Business', component: BusinessPage },
                   { title: 'Entertainment', component: EntertainmentPage },
                   { title: 'General', component: GeneralPage },

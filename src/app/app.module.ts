@@ -1,3 +1,7 @@
+import { AllNewsPageModule } from './../pages/all-news/all-news.module';
+import { TrendPageModule } from './../pages/trend/trend.module';
+import { ForyouPageModule } from './../pages/foryou/foryou.module';
+import { PrimaryTabsModulePage } from './../pages/primary-tabs-module/primary-tabs-module';
 import { LoginPage } from './../pages/login/login';
 import { WildlifePage } from './../pages/wildlife/wildlife';
 import { TechnologyPage } from './../pages/technology/technology';
@@ -30,6 +34,10 @@ import { DataProvider } from '../providers/data/data';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { NativeStorage } from '@ionic-native/native-storage'
 import { UserProvider } from '../providers/user/user';
+import { ForyouPage } from '../pages/foryou/foryou';
+import { TrendPage } from '../pages/trend/trend';
+import { AllNewsPage } from '../pages/all-news/all-news';
+
 const config = {
   apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
   authDomain: "newsdb-a2b21.firebaseapp.com",
@@ -57,7 +65,8 @@ const config = {
     EntertainmentPage,
     BusinessPage,
     InterestsPage,
-    LoginPage
+    LoginPage,
+    PrimaryTabsModulePage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +74,10 @@ const config = {
     SuperTabsModule.forRoot(),
     AngularFireModule.initializeApp(config),
     HttpClientModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ForyouPageModule,
+    TrendPageModule,
+    AllNewsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -86,7 +98,8 @@ const config = {
     EntertainmentPage,
     BusinessPage,
     InterestsPage,
-    LoginPage
+    LoginPage,
+    PrimaryTabsModulePage
   ],
   providers: [
     StatusBar,

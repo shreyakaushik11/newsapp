@@ -14,5 +14,13 @@
 
 
 <ion-content padding>
+  
+    <ion-card *ngFor="let i of data.articles;  let i=index;" (click)="inapp(i)">
+        <img src={{i.urlToImage}}/>
+        <ion-card-content> 
+         {{i.title}}
+        </ion-card-content>
+        </ion-card>
+
 
 </ion-content>

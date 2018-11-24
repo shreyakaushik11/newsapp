@@ -1,3 +1,4 @@
+import { PrimaryTabsModulePage } from './../primary-tabs-module/primary-tabs-module';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -53,6 +54,6 @@ toggle(i){
   }
 }
 continue(){
-  this.navCtrl.push(HomePage);
+  this.navCtrl.push(PrimaryTabsModulePage);
 }
 }

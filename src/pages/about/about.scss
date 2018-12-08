@@ -3,19 +3,16 @@ page-about {
     padding:12px
 }
 .ioncard{
-    
-        width: 100%;
-        margin: 0px;
-        height: 18em;
+     width: 100%;
+     margin: 0px;
+     height: 18em;
         
 }
 .item-md ion-avatar img {
     border-radius: 50%;
-    
     width: 120px;
     height: 120px;
-    margin-left: 8em;
-    
+    margin-left: 7em;
 }
 .card-header-md {
     font-size: 1.6rem;
@@ -25,5 +22,13 @@ page-about {
 .item-ios{
     padding-left: 48%;
 }
-
+.card-content-md {
+    padding: 53px 16px;
+    font-size: 1.4rem;
+    line-height: 1.8;
+}
+.item-md.item-block .item-inner {
+    padding-right: 8px;
+    border-bottom: 0px solid #dedede;
+}
 }

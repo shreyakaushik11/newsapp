@@ -5,13 +5,6 @@ import { AboutPage } from '../about/about';
 import {HttpClient} from '@angular/common/http';
 import {DataProvider} from '../../providers/data/data';
 
-/**
- * Generated class for the SportsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-sports',
   templateUrl: 'sports.html',
@@ -25,18 +18,11 @@ export class SportsPage {
   }
 
   ionViewDidLoad() {
-    this.http.get(this.url).subscribe(data => {
-     
+    this.http.get(this.url).subscribe(data => {     
         this.data = data;
-       
-      
       console.log(data);
-
-     
-    
     }, err => {
       console.log(err);
-      
     });
     console.log('ionViewDidLoad SportsPage');
   }
@@ -51,5 +37,4 @@ export class SportsPage {
   nextPage(){
     this.navCtrl.push(AboutPage);
   }
-
 }

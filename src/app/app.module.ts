@@ -1,5 +1,5 @@
-import { AllNewsPageModule } from './../pages/all-news/all-news.module';
 import { TrendPageModule } from './../pages/trend/trend.module';
+import { AllNewsPageModule } from './../pages/all-news/all-news.module';
 import { ForyouPageModule } from './../pages/foryou/foryou.module';
 import { PrimaryTabsModulePage } from './../pages/primary-tabs-module/primary-tabs-module';
 import { LoginPage } from './../pages/login/login';
@@ -34,9 +34,11 @@ import { DataProvider } from '../providers/data/data';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { NativeStorage } from '@ionic-native/native-storage'
 import { UserProvider } from '../providers/user/user';
-import { ForyouPage } from '../pages/foryou/foryou';
-import { TrendPage } from '../pages/trend/trend';
-import { AllNewsPage } from '../pages/all-news/all-news';
+// for AngularFireDatabase
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabase} from 'angularfire2/database';
+// for AngularFireAuth
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 const config = {
   apiKey: "AIzaSyBwWQVwNPAza-Jnuc5yYbS4iyy7iTbEalo",
@@ -75,9 +77,8 @@ const config = {
     AngularFireModule.initializeApp(config),
     HttpClientModule,
     AngularFirestoreModule,
-    ForyouPageModule,
-    TrendPageModule,
-    AllNewsPageModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -98,7 +99,7 @@ const config = {
     EntertainmentPage,
     BusinessPage,
     InterestsPage,
-    LoginPage,
+    LoginPage, 
     PrimaryTabsModulePage
   ],
   providers: [

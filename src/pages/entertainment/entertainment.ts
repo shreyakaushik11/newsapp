@@ -4,12 +4,6 @@ import {HttpClient} from '@angular/common/http';
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 import { AboutPage } from '../about/about';
 
-/**
- * Generated class for the TrendingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-entertainment',

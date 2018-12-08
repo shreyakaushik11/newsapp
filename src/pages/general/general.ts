@@ -3,12 +3,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {HttpClient} from '@angular/common/http';
 import { AboutPage } from '../about/about';
-/**
- * Generated class for the TrendingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-general',
@@ -44,12 +38,3 @@ export class GeneralPage {
     this.navCtrl.push(AboutPage);
   }
 }
-
- 
-    
-    
-   
-  
-  
-
-

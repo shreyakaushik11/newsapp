@@ -1,12 +1,6 @@
+import { AboutPage } from './../about/about';
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-
-/**
- * Generated class for the PrimaryTabsModulePage tabs.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -18,8 +12,9 @@ export class PrimaryTabsModulePage {
   foryouRoot = 'ForyouPage'
   trendRoot = 'TrendPage'
   allNewsRoot = 'AllNewsPage'
-
-
-  constructor(public navCtrl: NavController) {}
-
+  constructor(public navCtrl: NavController) {
+}
+nextPage(){
+  this.navCtrl.push(AboutPage);
+}
 }

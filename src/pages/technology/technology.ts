@@ -5,14 +5,6 @@ import { AboutPage } from '../about/about';
 import {HttpClient} from '@angular/common/http';
 import {DataProvider} from '../../providers/data/data';
 
-
-/**
- * Generated class for the TechnologyPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-technology',
   templateUrl: 'technology.html',
@@ -26,18 +18,11 @@ export class TechnologyPage {
   }
 
   ionViewDidLoad() {
-    this.http.get(this.url).subscribe(data => {
-      
+    this.http.get(this.url).subscribe(data => {      
         this.data = data;
-       
-      
       console.log(data);
-
-     
-    
     }, err => {
       console.log(err);
-      
     });
     console.log('ionViewDidLoad TechnologyPage');
   }
@@ -52,5 +37,4 @@ export class TechnologyPage {
   nextPage(){
     this.navCtrl.push(AboutPage);
   }
-
 }

@@ -1,22 +1,14 @@
-import { DataProvider } from './../../providers/data/data';
 import { UserProvider } from './../../providers/user/user';
 import { Component, Injectable } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController,Nav, NavParams,Platform } from 'ionic-angular';
 import firebase from 'firebase';
 import { Facebook } from '@ionic-native/facebook';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { NativeStorage } from '@ionic-native/native-storage';
-
-// import { finalize } from 'rxjs/operators';
-// import { auth } from 'firebase';
-// import { map } from 'rxjs/operators';
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {DataProvider} from '../../providers/data/data';
+import { HomePage } from '../home/home';
+import { InterestsPage } from '../interests/interests';
 export interface User { displayName:string, photoUrl:string, email:string};
 
 @Component({
@@ -28,27 +20,27 @@ export class LoginPage {
   displayName;
   email;
   photoUrl;
-
   public userProfile:any = null;
-  userCollection: AngularFirestoreCollection<User>;
+  // userCollection: AngularFirestoreCollection<User>;
   users: Observable<User[]>;
- 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public data: DataProvider, private nativeStorage: NativeStorage, private facebook: Facebook, private afs: AngularFirestore, private u:UserProvider) {
-    this.userCollection = afs.collection<User>('users');
+  constructor(public platform: Platform,public navCtrl: NavController,public nav:Nav,public data:DataProvider, public navParams: NavParams, private nativeStorage: NativeStorage, private facebook: Facebook, private afs: AngularFirestore, private u:UserProvider) {
+    if(this.data.sign==true)
+      this.nav.setRoot(InterestsPage)
+    this.data.userCollection = afs.collection<User>('users');
+    console.log("data",this.data.arr)
     firebase.auth().onAuthStateChanged( user => {
       if (user) {
-        // this.displayName = user.displayName;
+        this.data.name = user.displayName;
         // this.email = user.email;
-        // this.photoUrl = user.photoURL;
-        this.data.name=user.displayName;
-        this.data.photo=user.photoURL;
+        this.data.sign = true
+        this.data.photo = user.photoURL;
+        this.data.emailid=user.email;
         this.userData.displayName=user.displayName;
         this.userData.email=user.email;
         this.userData.photoUrl=user.photoURL;
-        console.log(this.userData.displayName);
+        console.log("test",this.data.name,this.data.photo);
         // console.log(this.email);
         // console.log(this.photoUrl);
-        
         this.userProfile = user;
         console.log(this.userProfile);
         // this.userCollection.add(this.userData)
@@ -59,7 +51,7 @@ export class LoginPage {
         }).then(() => {
           console.log("credentials stored");}
         )
-        this.userCollection.doc(this.userData.email).set(this.userData)
+        this.data.userCollection.doc(this.userData.email).set(this.userData)
 
       } else {
         console.log("There's no user here");
@@ -75,6 +67,10 @@ facebookLogin(): Promise<any> {
       firebase.auth().signInWithCredential(facebookCredential)
         .then( success => { 
           console.log("Firebase success: " + JSON.stringify(success)); 
+          this.data.sign =true
+          
+          this.nav.setRoot(HomePage)
+
         });
 
     }).catch((error) => { console.log(error) });
@@ -91,17 +87,23 @@ facebookLogin(): Promise<any> {
   //     alert(JSON.stringify(err))
   //   })
 
-  googleLogin():void {
+ async googleLogin(){
     const provider = new firebase.auth.GoogleAuthProvider();
   
-    firebase.auth().signInWithRedirect(provider).then( () => {
+   await firebase.auth().signInWithPopup(provider).then( () => {
       firebase.auth().getRedirectResult().then( result => {
         // This gives you a Google Access Token.
         // You can use it to access the Google API.
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
+
+        this.data.sign =true
+        
+        this.nav.setRoot(InterestsPage)
+
         console.log(token, user);
+        console.log("log",this.data.sign)
       }).catch(function(error) {
         // Handle Errors here.
         console.log(error.message)
@@ -110,17 +112,12 @@ facebookLogin(): Promise<any> {
       // Handle Errors here.
       console.log(error.message)
     })
-
+    this.nav.setRoot(InterestsPage)
   }
-  
   // addUser(){
   //   this.userCollection.doc(this.email).set(this.userInfo);
-
   // }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-
   }
-
 }
- 

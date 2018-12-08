@@ -1,33 +1,28 @@
-<ion-header no-border >
+<ion-header no-border>
   <ion-navbar color="dark">
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-      </button>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>User Profile</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
-<ion-card class="ioncard">
 
-  <ion-card-header>
-    <ion-item>
-      <ion-avatar>
-        <img src="{{data.photo}}">
-      </ion-avatar>
-      </ion-item>
-   
-  </ion-card-header>
-
-  <ion-card-content text-center>
-  <p style="font-size: 25px">{{data.name}} </p>
+  <ion-item>
+    <ion-avatar>
+      <img src="{{data.photo}}">
+    </ion-avatar>
+  </ion-item>
+  <ion-card-content>
+    <ion-icon name="person" style="font-size: 20px"> {{data.name}}</ion-icon>
+    <ion-icon name="mail" style="font-size: 20px"> {{data.emailid}}</ion-icon>
   </ion-card-content>
- 
- </ion-card>
+
 </ion-content>
 <ion-footer>
   <ion-toolbar>
     <div text-center>
-      <button ion-button round color="dark" end>Logout</button>
-      </div>
+      <button ion-button round color="dark" (click)="logout()" end>Logout</button>
+    </div>
   </ion-toolbar>
 </ion-footer>

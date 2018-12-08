@@ -11,6 +11,10 @@
         {{p.title}}
         
       </button>
+      <button menuClose ion-item *ngIf="!data.sign" (click)="loginOpen(LoginPage)">
+        Login
+        
+      </button>
     </ion-list>
   </ion-content>
 

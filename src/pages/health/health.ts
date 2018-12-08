@@ -5,13 +5,6 @@ import { AboutPage } from '../about/about';
 import {HttpClient} from '@angular/common/http';
 import {DataProvider} from '../../providers/data/data';
 
-/**
- * Generated class for the HealthPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-health',
   templateUrl: 'health.html',
@@ -26,15 +19,10 @@ export class HealthPage {
 
   ionViewDidLoad() {
     this.http.get(this.url).subscribe(data => {
-        this.data = data;
-       
-      
-      console.log(data);
-
-     
+        this.data = data;   
+      console.log(data); 
     }, err => {
-      console.log(err);
-      
+      console.log(err);  
     });
     console.log('ionViewDidLoad HealthPage');
   }
@@ -49,5 +37,4 @@ export class HealthPage {
   nextPage(){
     this.navCtrl.push(AboutPage);
   }
-
 }

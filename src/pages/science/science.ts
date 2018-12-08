@@ -4,12 +4,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AboutPage } from '../about/about';
 import {HttpClient} from '@angular/common/http';
 import {DataProvider} from '../../providers/data/data';
-/**
- * Generated class for the SciencePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-science',
@@ -25,15 +19,10 @@ export class SciencePage {
 
   ionViewDidLoad() {
     this.http.get(this.url).subscribe(data => {
-        this.data = data;
-       
-      
+        this.data = data;      
       console.log(data);
-
-     
     }, err => {
       console.log(err);
-      
     });
     console.log('ionViewDidLoad SciencePage');
   }
@@ -48,5 +37,4 @@ export class SciencePage {
   nextPage(){
     this.navCtrl.push(AboutPage);
   }
-
 }
